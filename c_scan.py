@@ -1,10 +1,10 @@
 # coding:utf-8
+import argparse
 from queue import Queue
 from threading import Thread
 import requests
 import wmi
 from nmap import nmap
-
 from config import *
 
 
@@ -22,9 +22,6 @@ class nm:
             :param netmask: 子网掩码
             :return: 子网掩码1的个数
             """
-            # 分割字符串格式的子网掩码为四段列表
-            # 计算二进制字符串中 '1' 的个数
-            # 转换各段子网掩码为二进制, 计算十进制
             return sum([bin(int(i)).count('1') for i in netmask.split('.')])
 
         return f"{wmi_out[0].DefaultIPGateway[0]}/{netmask_to_bit_length(wmi_out[0].IPSubnet[0])}"
@@ -73,7 +70,6 @@ class c_scan:
         def run(self):
             while not self.__queue.empty():
                 scan_url = self.__queue.get()
-                # 请求地址
                 try:
                     print(f"正在请求{scan_url}")
                     response = requests.get(scan_url, timeout=1)
@@ -83,5 +79,17 @@ class c_scan:
                     pass
 
 
-scan = c_scan(100)
+parser = argparse.ArgumentParser(description='抓取网关的IP地址机器常用端口.')
+parser.add_argument('-n', '--number', type=int, help='线程使用数量，默认为（20）.', required=False)
+parser.add_argument('-p', '--ports', type=str, help='检索端口，默认为配置文件的端口.', required=False)
+args = parser.parse_args()
+
+n = 20
+p = common_ports
+if args.number:
+    n = int(args.number)
+if args.ports:
+    p = int(args.ports)
+
+scan = c_scan(thread_count=n, ports=p)
 scan.start()
