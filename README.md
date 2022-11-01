@@ -1,9 +1,13 @@
 # pythonU
+
 python的一些小工具
 
-注意需要的是python-nmap模块
 
-使用命令
+# 主要模块的安装
+
+pip install python-nmap
+
+# 使用
 
 python c_scan.py
 
