@@ -1,17 +1,17 @@
 # pythonU
 
-python的一些小工具
+python的一些小工具，目前只有内网c_段扫描
 
 
-# 主要模块的安装
+## 主要模块的安装
 
 pip install python-nmap
 
-# 使用
+## 使用
 
 python c_scan.py
 
-结果
+## 结果
 
 扫描完成！
 
