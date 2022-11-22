@@ -4,7 +4,13 @@
 
 ##用法
 
-1. 运行
+python .\php_XOR_generate.py -h
+usage: php_XOR_generate.py [-h] [-s STR] [-c CONSTR] [-f FILE]
 
-2. 输入想要转换的字符串，即可得到 以 ‘.’ 连接的无字符特征码字符串
+输入字符获取PHP异或运算的两个可行字符.
 
+options:
+  -h, --help                  show this help message and exit
+  -s STR, --str STR           输入字符
+  -c CONSTR, --constr CONSTR  默认为PHP字符的连接符“.”
+  -f FILE, --file FILE        是否生成php免杀文件y/n
