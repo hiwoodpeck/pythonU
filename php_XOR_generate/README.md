@@ -4,6 +4,7 @@
 
 ## 用法
 
+```python
 python .\php_XOR_generate.py -h
 
 usage: php_XOR_generate.py [-h] [-s STR] [-c CONSTR] [-f FILE]
@@ -19,3 +20,5 @@ options:
   -c CONSTR, --constr CONSTR  默认为PHP字符的连接符“.”
   
   -f FILE, --file FILE        是否生成php免杀文件y/n
+```
+
