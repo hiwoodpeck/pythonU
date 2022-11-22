@@ -1,8 +1,8 @@
-##作用
+## 作用
 
 用于生成 php 无字符特征码
 
-##用法
+## 用法
 
 python .\php_XOR_generate.py -h
 
