@@ -6,7 +6,9 @@
 
 ```python
 python .\php_XOR_generate.py -h
+```
 
+```txt
 usage: php_XOR_generate.py [-h] [-s STR] [-c CONSTR] [-f FILE]
 
 输入字符获取PHP异或运算的两个可行字符.
