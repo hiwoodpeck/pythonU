@@ -1,6 +1,6 @@
 # pythonU
 
-python的一些小工具，目前有内网c_段扫描
+python的一些小工具
 
 
 ## 如何使用
